@@ -1,0 +1,28 @@
+{
+  "name": "7.05",
+  "version": "1.0.0",
+  "description": "puppeteer 7.05",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Erika-Michel/7.05.git"
+  },
+  "keywords": [
+    "puppeteer",
+    "cucumber"
+  ],
+  "author": "Erika Michel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Erika-Michel/7.05/issues"
+  },
+  "homepage": "https://github.com/Erika-Michel/7.05#readme",
+  "dependencies": {
+    "jest": "^28.0.2",
+    "jest-puppeteer": "^6.1.0",
+    "puppeteer": "^13.7.0"
+  }
+}
