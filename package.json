@@ -21,8 +21,10 @@
   },
   "homepage": "https://github.com/Erika-Michel/7.05#readme",
   "dependencies": {
+    "beautify": "^0.0.8",
     "jest": "^28.0.2",
     "jest-puppeteer": "^6.1.0",
+    "prettier": "^2.6.2",
     "puppeteer": "^13.7.0"
   }
 }
