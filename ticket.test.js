@@ -27,7 +27,7 @@ describe("Tickets tests", () => {
     await page.goto("http://qamid.tmweb.ru/client/index.php");
   });
 
-  test.skip("Should check if available time is shown - test'", async () => {
+  test("Should check if available time is shown - test'", async () => {
     await chooseDayAndMovie(
       page,
       ".page-nav > a:nth-child(2)",
@@ -35,10 +35,10 @@ describe("Tickets tests", () => {
     );
     const actual = await getText(page, "div > p.buying__info-start");
 
-    expect(actual).toContain("Начало сеанса: 17:00");
+    expect(actual).toContain("Начало сеанса");
   });
 
-  test.skip("Should book a ticket if available - test'", async () => {
+  test("Should book a ticket if available - test'", async () => {
     let row = getRandom(1, 10);
     let chair = getRandom(1, 10);
 
@@ -66,12 +66,18 @@ describe("Tickets tests", () => {
   });
 
   test("Should not book a ticket if already booked - test", async () => {
+    let row = getRandom(1, 10);
+    let chair = getRandom(1, 10);
+
     await chooseDayAndMovie(
       page,
       ".page-nav > a:nth-child(5)",
       "section:nth-child(3) li"
     );
-    await clickElement(page, "div:nth-child(4) > span:nth-child(6)");
+    await clickElement(
+      page,
+      `div:nth-child(${row}) > span:nth-child(${chair})`
+    );
     await clickElement(page, "button.acceptin-button");
     expect(await getText(page, "h2.ticket__check-title")).toContain(
       "Вы выбрали билеты:"
@@ -87,7 +93,10 @@ describe("Tickets tests", () => {
       ".page-nav > a:nth-child(5)",
       "section:nth-child(3) li"
     );
-    await clickElement(page, "div:nth-child(4) > span:nth-child(6)");
+    await clickElement(
+      page,
+      `div:nth-child(${row}) > span:nth-child(${chair})`
+    );
     expect(
       String(
         await page.$eval("button.acceptin-button", (button) => {
