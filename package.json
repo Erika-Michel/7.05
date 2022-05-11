@@ -4,7 +4,8 @@
   "description": "puppeteer 7.05",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "cucumber": "cucumber-js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,8 @@
   "homepage": "https://github.com/Erika-Michel/7.05#readme",
   "dependencies": {
     "beautify": "^0.0.8",
+    "chai": "^4.3.6",
+    "cucumber": "^6.0.7",
     "jest": "^28.0.2",
     "jest-puppeteer": "^6.1.0",
     "prettier": "^2.6.2",
