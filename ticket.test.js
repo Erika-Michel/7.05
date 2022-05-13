@@ -3,12 +3,9 @@ const { purchase, chooseDayAndMovie, getRandom } = require("./lib/utils");
 
 let page;
 
-//function getRandom(min, max) {
-//  return Math.floor(Math.random() * (max - min + 1)) + min;
-//}
-
 beforeEach(async () => {
   page = await browser.newPage();
+  await page.goto("http://qamid.tmweb.ru/client/index.php");
   await page.setDefaultNavigationTimeout(0);
 });
 
@@ -17,11 +14,6 @@ afterEach(() => {
 });
 
 describe("Tickets tests", () => {
-  beforeEach(async () => {
-    page = await browser.newPage();
-    await page.goto("http://qamid.tmweb.ru/client/index.php");
-  });
-
   test("Should check if available time is shown - test'", async () => {
     await chooseDayAndMovie(
       page,
